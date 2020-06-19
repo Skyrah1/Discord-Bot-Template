@@ -23,7 +23,7 @@ The format might take some getting used to and it's not exactly the most space-e
 
 ## Adding custom commands
 
-In the *reply.js* file, you can add a custom command to your bot by pushing a new *Command* into the *validCommands* list in:
+In the *reply.js* file, you can add a custom command to your bot by pushing a new *Command* into the *validCommands* list:
 
 > validCommands.push(new commandLib.Command([name], [description], [function]));
 
