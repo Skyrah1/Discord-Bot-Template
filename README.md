@@ -17,7 +17,7 @@ The template comes with 4 basic example commands:
 This template stores a list of *Command* objects in a list during run-time, with each object containing:
 - a name (used as both an identifier and what a user would include in their Discord message)
 - a description of the command (displayed upon entering the "help" command in Discord)
-- a function (executed when the command is entered by a user on Discord, **must return true**<small>It will still technically work if it doesn't return anything but it will also print the error message for unknown commands</small>)
+- a function (executed when the command is entered by a user on Discord, **must return true**. <small>It will still technically work if it doesn't return anything but it will also print the error message for unknown commands</small>)
 
 The format might take some getting used to and it's not exactly the most space-efficient way of doing things, but it does means new commands automatically get added to the **help** list.
 
