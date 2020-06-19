@@ -42,4 +42,6 @@ To start up the bot on your machine, type in your terminal:
 
 > node js/bot.js
 
-This will prompt you to enter your bot token (NOT YOUR USER TOKEN) into the terminal. If the token is valid and you're connected to the internet, your bot should be up and running on your Discord server.
+This will prompt you to enter your bot token (NOT YOUR USER TOKEN) into the terminal. This token can be found by going to the [Discord Development Portal](https://discord.com/developers/applications), clicking on your bot (or creating one if you don't have one yet), then going to the Bot tab in the Settings menu.
+
+If the token is valid and you're connected to the internet, your bot should be up and running on your Discord server.
