@@ -20,7 +20,12 @@ var botClient;
 var message;
 var messageString = "";
 
+// This list is meant to contain any and all Commands that give
+// your Discord bot functionality.
+// Push your Commands into this list.
 const validCommands = [];
+
+//-----------Commands-----------//
 
 validCommands.push(new commandLib.Command(
     "helloWorld",
@@ -43,6 +48,17 @@ validCommands.push(new commandLib.Command(
 ));
 
 validCommands.push(new commandLib.Command(
+    "cat",
+    "Displays an image of a cat",
+    () => {
+        sendImage("Have a cute public domain cat.\n"
+        + "Image source: https://www.publicdomainpictures.net/en/view-image.php?image=161619&picture=cat-in-suitcase",
+        "https://www.publicdomainpictures.net/pictures/170000/velka/cat-in-suitcase.jpg");
+        return true;
+    }
+));
+
+validCommands.push(new commandLib.Command(
     "help",
     "I mean...you're using it right now, so...",
     () => {
@@ -59,6 +75,10 @@ validCommands.push(new commandLib.Command(
     }
 ));
 
+//-----------End of commands-----------//
+
+// This is the function used to execute commands, which is called by
+// client.on("message") in bot.js
 function reply(prefix, client, msg) {
     message = msg;
     messageString = "";
@@ -86,6 +106,8 @@ function reply(prefix, client, msg) {
     return validMessage;
 }
 
+// This function is used to send an image to the Discord server,
+// along with a message string.
 function sendImage(string, image){
     message.channel.send(`${string}\n`, {
         files: [image]

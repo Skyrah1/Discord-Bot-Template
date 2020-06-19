@@ -8,15 +8,16 @@ This template contains 3 basic example commands, which can be executed on the Di
 
 > !bot [command]
 
-The template comes with 3 basic example commands:
+The template comes with 4 basic example commands:
 - **helloWorld** (self explanatory)
 - **testPingReply** (used to confirm that the bot can ping users)
+- **cat** (displays a picture of a cat from the internet, along with the image source)
 - **help** (privately messages the user *the entire list of commands* it's capable of responding to)
 
 This template stores a list of *Command* objects in a list during run-time, with each object containing:
 - a name (used as both an identifier and what a user would include in their Discord message)
 - a description of the command (displayed upon entering the "help" command in Discord)
-- a function (executed when the command is entered by a user on Discord)
+- a function (executed when the command is entered by a user on Discord, **must return true**<small>It will still technically work if it doesn't return anything but it will also print the error message for unknown commands</small>)
 
 The format might take some getting used to and it's not exactly the most space-efficient way of doing things, but it does means new commands automatically get added to the **help** list.
 

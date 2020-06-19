@@ -23,10 +23,14 @@ const token = readline.question("Please enter your bot token: ", {
     hideEchoBack: true,
 });
 
+// This function is performed when users attempt to enter an unknown command.
+// NOTE: If your bot performs both this function AND the one you intended to
+// work, make sure the function in your Command returns true.
 function errorMessage(msg){
     msg.channel.send("???");
 }
 
+// Everything in here is performed when your bot first starts up.
 client.on("ready", () => {
     client.user.setStatus("available");
     client.user.setPresence({
@@ -38,9 +42,14 @@ client.on("ready", () => {
     console.log(`${client.user.tag} is online!`);
 });
 
+// Everything in here is performed whenever someone enters a message
+// into your server.
+// You can choose which messages cause the bot to respond by changing the
+// prefix variable. Right now, it will respond to any messages starting with
+// "!bot ", followed by a command (e.g. "!bot helloWorld")
 client.on("message", msg => {
     let prefix = "!bot ";
-    var validMessage = true;
+    let validMessage = true;
     if (msg.content.startsWith(prefix)){
         validMessage = reply.reply(prefix, client, msg);
         if (validMessage){
